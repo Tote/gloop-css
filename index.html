@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width">
     <title>CSS Sprite Animation</title>
     <link rel="stylesheet" href="SpriteAnimation.css">
+    <script src="SpriteAnimation.js"></script>
 </head>
 
 <body>
     <h1>Hi!</h1>
-    <div class="animation male up"></div>
-    <div class="animation blob"></div>
+<script>
+    const blob = document.createElement('gloop-animation')
+    blob.sprite = 'baseMale.png'
+    blob.height = 100
+    blob.width = 100
+    blob.frames = 5
+    blob.duration = 0.5
+    blob.rows = 4
+
+    document.body.appendChild(blob)
+
+</script>
 </body>
 
 </html>
