@@ -1,0 +1,42 @@
+.male{
+    --width: 300px;
+    --height: 150px;
+    --frames: 5;
+    --duration: 0.5s;
+    --rows: 4;
+    --sprite:  url('baseMale.png');
+}
+.male.up    {--activeRow: 0;}
+.male.left  {--activeRow: 1;}
+.male.down  {--activeRow: 2;}
+.male.right {--activeRow: 3;}
+
+
+.blob{
+    --width: 100px;
+    --height: 100px;
+    --frames: 6;
+    --duration: 0.5s;
+    --rows: 1;
+    --activeRow: 0;
+    --sprite:  url('sprite.png');
+}
+
+.animation {
+    width: var(--width);
+    height: var(--height);
+    background:var(--sprite);
+    background-size: calc(var(--width) * var(--frames)) calc(var(--height) * var(--rows));
+    animation: spriteAnimation var(--duration) steps(var(--frames)) infinite;
+    background-position-y: calc(var(--height) * var(--activeRow)*-1);
+}
+
+@keyframes spriteAnimation {
+    from{
+        background-position-x: 0;
+    }
+    to{
+        background-position-x: calc((var(--width)*var(--frames))*-1);
+    }
+}
+
